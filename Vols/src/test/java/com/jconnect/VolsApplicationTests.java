@@ -1,10 +1,16 @@
 package com.jconnect;
 
+
+import static org.hamcrest.CoreMatchers.is;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -12,29 +18,53 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.jconnect.api.controller.UserApiController;
+import com.jconnect.dao.JetRepository;
+import com.jconnect.service.JetService;
+
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class VolsApplicationTests {
 	
-
-	private MockMvc mockMvc;
+	@Mock
+	JetService jetService;
 	
-	@InjectMocks
-	UserApiController api;
+	@Mock
+	JetRepository jetRepository;
 
-	@Before
-	public void setUp() {
-		mockMvc = MockMvcBuilders.standaloneSetup(api).build();
-	}
-	
-	@Test
-	public void contextLoads() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/test"))
-		.andExpect(MockMvcResultMatchers.content().string("Test is OK"));
+	/*@Test
+	public void findAllJets() {
+	//	List<Jet> jets=jetService.findAllJet();
+	//	assertThat(jets.size()).isEqualTo(3);
 		
 	}
+	*/
+	
+	private MockMvc mocMvc;
+	
+	@InjectMocks
+	UserApiController apiController;
+	
+	@Before
+public void setup() {
+		MockitoAnnotations.initMocks(this);
+		mocMvc=MockMvcBuilders.standaloneSetup(apiController).build();
+	}
 	
 	
+	@Test
+	public void jetVerif() throws Exception {
+		mocMvc.perform(MockMvcRequestBuilders.get("/api/jets"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8));
+	}
+
+	@Test
+	public void findById() throws Exception {
+		mocMvc.perform(MockMvcRequestBuilders.get("/api/jet/{id}", 15L))
+		.andExpect(MockMvcResultMatchers.jsonPath("$.name", is("jet1")));
+	}
+
 
 }
