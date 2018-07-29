@@ -8,10 +8,10 @@ import com.jconnect.entities.Jet;
 
 public interface JetService {
 	public List<Jet> findAll();
-    public void deleteJet(Long id);
-    public Jet addJet(Jet jet);
+    public void delete(Long id);
+    public Jet save(Jet jet);
     public Jet editJet(Jet jet);
-    public Jet findJetById(Long id);
+    public Jet findById(Long id);
     public ArrayList<Jet> searchJet(String value);
 	public List<Jet> findByName(String name);
     public List<Jet> search(String Name);

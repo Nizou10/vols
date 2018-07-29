@@ -24,13 +24,13 @@ public class JetServiceImpl implements JetService {
 	}
 
 	@Override
-	public void deleteJet(Long id) {
-	   jetRepository.delete(findJetById(id));
+	public void delete(Long id) {
+	   jetRepository.delete(findById(id));
 		
 	}
 
 	@Override
-	public Jet addJet(Jet jet) {
+	public Jet save(Jet jet) {
 		
 		return jetRepository.save(jet);
 	}
@@ -41,7 +41,7 @@ public class JetServiceImpl implements JetService {
 	}
 
 	@Override
-	public Jet findJetById(Long id) {
+	public Jet findById(Long id) {
 		return jetRepository.findById(id).get();
 	}
 

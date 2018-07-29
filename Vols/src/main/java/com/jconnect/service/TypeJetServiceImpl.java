@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import com.jconnect.dao.ReservationRepository;
 import com.jconnect.dao.jetTypeRepository;
 import com.jconnect.entities.TypeJet;
 @Service("typejetservice")
@@ -23,18 +22,18 @@ public class TypeJetServiceImpl implements TypeJetService {
 	}
 
 	@Override
-	public TypeJet FindById(Long id) {
+	public TypeJet findById(Long id) {
 		return jetTypeRepository.findById(id).get();
 	}
 
 	@Override
-	public List<TypeJet> FindAll() {
+	public List<TypeJet> findAll() {
 		// TODO Auto-generated method stub
 		return jetTypeRepository.findAll();
 	}
 
 	@Override
-	public TypeJet addTypeJet(TypeJet typejet) {
+	public TypeJet save(TypeJet typejet) {
 		// TODO Auto-generated method stub
 		return jetTypeRepository.save(typejet);
 	}

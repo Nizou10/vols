@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="cancelCause")
 public class CancelCause implements Serializable {
+	private static final long serialVersionUID = 817424257949518688L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
