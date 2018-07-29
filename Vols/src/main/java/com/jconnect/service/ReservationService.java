@@ -2,7 +2,6 @@ package com.jconnect.service;
 
 import java.util.List;
 
-import com.jconnect.entities.Jet;
 import com.jconnect.entities.Reservation;
 import com.jconnect.entities.User;
 
