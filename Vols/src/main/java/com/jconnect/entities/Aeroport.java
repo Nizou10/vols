@@ -16,67 +16,42 @@ public class Aeroport implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String city_name;
-	private String airport_code;
-	private String airport_name;
-	private String country_name;
-	private String country_abreviation;
-	private Long world_area_code;
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getCity_name() {
-		return city_name;
+	public String getName() {
+		return name;
 	}
-
-	public void setCity_name(String city_name) {
-		this.city_name = city_name;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public String getAirport_code() {
-		return airport_code;
+	public String getCode() {
+		return code;
 	}
-
-	public void setAirport_code(String airport_code) {
-		this.airport_code = airport_code;
+	public void setCode(String code) {
+		this.code = code;
 	}
-
-	public String getAirport_name() {
-		return airport_name;
+	public String getCity() {
+		return city;
 	}
-
-	public void setAirport_name(String airport_name) {
-		this.airport_name = airport_name;
+	public void setCity(String city) {
+		this.city = city;
 	}
-
-	public String getCountry_name() {
-		return country_name;
+	public String getCountry() {
+		return country;
 	}
-
-	public void setCountry_name(String country_name) {
-		this.country_name = country_name;
+	public void setCountry(String country) {
+		this.country = country;
 	}
+	private String name;
+	private String code;
+	private String city;
+	private String country;
 
-	public String getCountry_abreviation() {
-		return country_abreviation;
-	}
 
-	public void setCountry_abreviation(String country_abreviation) {
-		this.country_abreviation = country_abreviation;
-	}
 
-	public Long getWorld_area_code() {
-		return world_area_code;
-	}
-
-	public void setWorld_area_code(Long world_area_code) {
-		this.world_area_code = world_area_code;
-	}
 
 }
