@@ -26,7 +26,7 @@ public class UserApiController {
     protected UserService userService;
 	@Resource(name= "reservationService")
 	protected ReservationService reservationService;
-	@Resource(name="AeroportService")
+	@Resource(name="aeroportService")
 	protected AeroportService aeroportService;
 
     @GetMapping("user/test")

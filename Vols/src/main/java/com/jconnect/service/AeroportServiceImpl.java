@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.jconnect.dao.AeroportRepository;
 import com.jconnect.entities.Aeroport;
 
-@Service("AeroportService")
+@Service("aeroportService")
 public class AeroportServiceImpl implements AeroportService{
 	
 	@Autowired

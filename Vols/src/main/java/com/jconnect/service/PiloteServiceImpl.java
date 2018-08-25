@@ -13,7 +13,6 @@ import com.jconnect.dao.PiloteRepository;
 	import com.jconnect.entities.Pilote;
 
 	@Service("piloteService")
-	@ComponentScan("com.jconnect.dao")
 	public class PiloteServiceImpl implements PiloteService {
 		
 	    @Autowired

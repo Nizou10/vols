@@ -10,7 +10,7 @@ import com.jconnect.entities.Aeroport;
 
 public interface AeroportRepository extends JpaRepository<Aeroport,Long> {
 	
-	@Query("SELECT a FROM Aeroport a WHERE a.city_name like %:value% or a.airport_name like %:value%")
+	@Query("SELECT a FROM Aeroport a WHERE a.city like %:value% or a.name like %:value%")
 	  public List<Aeroport> search(@Param("value") String value);
 	
 	  public Aeroport findByName(String name);

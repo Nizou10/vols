@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.jconnect.dao.VolRepository;
 import com.jconnect.entities.Vol;
 
-@Service("VolService")
+@Service("volService")
 public class VolServiceImpl implements VolService{
 	@Autowired
 	VolRepository volRepository;

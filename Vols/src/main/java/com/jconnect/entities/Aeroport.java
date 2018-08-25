@@ -16,6 +16,11 @@ public class Aeroport implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String name;
+	private String code;
+	private String city;
+	private String country;
+	
 	public Long getId() {
 		return id;
 	}
@@ -46,10 +51,7 @@ public class Aeroport implements Serializable {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	private String name;
-	private String code;
-	private String city;
-	private String country;
+
 
 
 

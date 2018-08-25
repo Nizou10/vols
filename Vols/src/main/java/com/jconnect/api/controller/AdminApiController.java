@@ -51,22 +51,22 @@ public class AdminApiController {
 	@Resource(name = "jetService")
 	protected JetService jetService;
 
-	@Resource(name = "TypeJetService")
+	@Resource(name = "typejetservice")
 	protected TypeJetService typejetService;
 
-	@Resource(name = "VolService")
+	@Resource(name = "volService")
 	protected VolService volService;
 
-	@Resource(name = "UserService")
+	@Resource(name = "userService")
 	protected UserService userService;
 	
-	@Resource(name="ReservationService")
+	@Resource(name="reservationService")
 	protected ReservationService reservationService;
 	
-	@Resource(name="CancelCauseService")
+	@Resource(name="cancelCauseService")
 	protected CancelCauseService cancelCauseService;
 	
-	@Resource(name="PiloteService")
+	@Resource(name="piloteService")
 	protected PiloteService piloteService;
 	
 	
